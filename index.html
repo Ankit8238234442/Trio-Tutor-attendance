@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Attendance App</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ PWA Settings -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
+
+  <!-- ✅ iPhone Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Attendance App">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<!-- Home Screen -->
+<div id="home">
+  <img src="logo.png" alt="Logo" class="logo" />
+  <h1>Attendance App</h1>
+
+  <h2>Take Attendance</h2>
+  <div class="class-buttons">
+    <button class="class-btn" data-class="Class 10">Class 10 📝</button>
+    <button class="class-btn" data-class="Class 11">Class 11 📝</button>
+    <button class="class-btn" data-class="Class 12">Class 12 📝</button>
+  </div>
+
+  <h2>Add Student</h2>
+  <div class="add-dropdown">
+    <select id="addClassSelect">
+      <option value="">Select Class</option>
+      <option value="Class 10">Class 10</option>
+      <option value="Class 11">Class 11</option>
+      <option value="Class 12">Class 12</option>
+    </select>
+    <button id="goAddStudent">➕ Add Student</button>
+  </div>
+</div>
+
+<!-- Attendance Section -->
+<div id="attendanceSection" class="hidden">
+  <img src="logo.png" class="logo-small" />
+  <h2 id="attendanceTitle">Class</h2>
+  <button id="backAttendance">⬅ Back</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Name</th><th>Phone</th><th>Status</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="attendanceTbody"></tbody>
+  </table>
+
+  <div class="controls">
+    <button id="saveAttendance">💾 Save</button>
+    <button id="sendWhatsApp">📲 WhatsApp</button>
+    <button id="exportExcel">📥 Excel</button>
+    <button id="clearAttendance">🗑️ Clear</button>
+  </div>
+</div>
+
+<!-- Add Student Section -->
+<div id="addStudentSection" class="hidden">
+  <img src="logo.png" class="logo-small" />
+  <h2 id="addStudentTitle">Add Student</h2>
+  <button id="backAddStudent">⬅ Back</button>
+
+  <div class="student-form">
+    <input id="newStudentName" type="text" placeholder="Student Name" />
+    <input id="newStudentPhone" type="tel" placeholder="Phone e.g. +919876543210" value="+91" />
+    <button id="addStudentHome">➕ Add Student</button>
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" class="logo-footer" />
+  <p>✅ Powered by Vraksh Enterprises</p>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- ✅ Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('✅ Service Worker Registered'))
+      .catch(err => console.log('Service Worker registration failed:', err));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body { font-family: Arial; margin:0; padding:0; background:#f4f6fa; color:#222; }
+h1,h2{ text-align:center; color:#003366; margin-top:10px; }
+.hidden{ display:none; }
+
+button {
+  background:#003366; color:#fff; border:none; border-radius:8px;
+  padding:10px 15px; font-size:16px; cursor:pointer; transition:0.3s;
+}
+button:hover { background:#0055aa; }
+
+.logo { display:block; margin:20px auto; width:120px; height:auto; }
+.logo-small { display:block; margin:10px auto; width:80px; }
+.logo-footer { width:40px; height:auto; margin-right:5px; }
+
+.class-buttons { display:flex; justify-content:center; gap:10px; margin:10px; }
+.class-btn { flex:1; max-width:120px; padding:12px; }
+
+.add-dropdown { display:flex; justify-content:center; gap:10px; margin:10px; }
+select { padding:10px; border-radius:6px; border:1px solid #003366; font-size:16px; }
+
+.student-form { text-align:center; margin:15px; }
+input { padding:10px; margin:6px; border:1px solid #003366; border-radius:6px; width:90%; max-width:250px; }
+
+table { width:95%; margin:10px auto; border-collapse:collapse; }
+th,td { border:1px solid #003366; padding:8px; text-align:center; }
+th { background:#003366; color:#fff; }
+
+.controls { text-align:center; margin:10px; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+
+footer { background:#003366; color:white; text-align:center; padding:8px; position:fixed; bottom:0; width:100%;
+  display:flex; justify-content:center; align-items:center; font-size:14px; }
